@@ -1,0 +1,209 @@
+body {
+    background-color: lightgoldenrodyellow;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    min-width: 260px;
+    padding: 20px;
+    font-family: sans-serif;
+    display: grid;
+    /* The following "min-height" property
+    must be used instead of the "height" property,
+    because the "height" property does not make
+    the footer bottom padding applied (?)
+    (however it is still computed to the proper
+    value). As for the substraction and multiplication,
+    we need to substract both the left and right
+    paddings, which are equal. */
+    min-height: calc(100vh - 20px * 2);
+    /* I must have used grid here
+    because of strange issue with the footer
+    (at least in Firefox 65.0) - without grid,
+    its desktop height is equal to its mobile
+    height (i.e. with mobile content height
+    determining the container height -
+    i.e. greater than needed, at least currently). */
+    grid-template-rows: auto 1fr auto;
+    align-items: center;
+}
+
+h1 {
+    color: #305050;
+    font-size: 1.5rem;
+    border-top: 3px dotted #305050;
+    border-bottom: 3px dotted #305050;
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+.main-title {
+    text-align: center;
+    background: rgba(48, 80, 80, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #305050;
+}
+
+.main-title span {
+    margin: 0;
+    font-family: monospace;
+    font-weight: 500;
+    font-size: 1.9rem;
+    padding: 0;
+}
+
+.main-menu {
+    background-color: rgba(48, 80, 80, 0.2);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.main-menu .navigation-element {
+    background-color: lightsalmon;
+    margin: 5px;
+    padding: 10px;
+    color: inherit;
+    border: none;
+    width: calc(100% - 10px);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 500ms, border-radius 500ms;
+}
+
+.main-menu .navigation-element:hover {
+    background-color: rgb(240, 128, 84);
+    border-radius: 10px;
+}
+
+/* The following rule has the desirable behavior, and
+it is working. But it is commented out because both
+I would not want both a "one-browser/engine solution". */
+/* .main-menu a:focus {
+    -moz-outline-radius-bottomleft: 10px;
+    -moz-outline-radius-bottomright: 10px;
+    -moz-outline-radius-topleft: 10px;
+    -moz-outline-radius-topright: 10px;
+} */
+
+.main-menu .active {
+    border: 4px solid rgba(48, 80, 80, 0.4);
+    /* The value of the following "padding" property
+    is decreased by the value of "a" elements border
+    width, in order not to slightly visibly shift
+    "a" elements when the border is applied to them
+    by the hover effect. */
+    padding: calc(10px - 4px);
+    border-radius: 10px;
+    background-color: rgb(240, 128, 84);
+}
+
+.main-content {
+    /* The difference that is made by using
+    the following "align-self" property may not
+    be visible at first sight (try decreasing
+    the zoom of the website). But without that set,
+    the "grid" applied to the "body" element would
+    center it. And since its content is the one
+    that is supposed to contain text, not graphics,
+    I would not want to center it. */
+    align-self: stretch;
+}
+
+/* The following code is currently off,
+maybe for future improvements. */
+
+/* .home-content,
+.cat-description-content,
+.cat-content {
+    opacity: 1;
+    transition: opacity 1000ms;
+} */
+
+/* The following code is currently off,
+maybe for future improvements. */
+
+/* .scaling-cat-slider-container table {
+    width: 50%;
+    margin: auto;
+}
+
+.scaling-cat-slider-container td {
+    width: 50%;
+}
+
+.scaling-cat-slider-container tr:first-child {
+    text-align: center;
+}
+
+.scaling-cat-slider-container tr:last-child td:first-child {
+    text-align: left;
+}
+
+.scaling-cat-slider-container tr:last-child td:last-child {
+    text-align: right;
+}
+
+.scaling-cat-slider-container input {
+    width: 50%;
+    min-width: 150px;
+} */
+
+.main-footer {
+    background-color: rgba(48, 80, 80, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 650px) {
+    .main-menu {
+        /* The following "padding" property is set,
+        because the value of the padding set
+        to the main menu anchor elements caused them
+        to stretch over the main menu container
+        in the desktop view. */
+        padding: 20px;
+        text-align: center;
+    }
+
+    .main-menu .navigation-element {
+        /* The following "display" property is set to "inline"
+        and the "width" property is set to "initial",
+        because for the mobile view it is made "block".
+        That caused them to stretch horizontally,
+        and now there is no need for such stretching. */
+        display: inline;
+        /* Although Visual Studio Code is showing an error -
+        that is, 'Property is ignored due to the display.
+        With 'display: inline', the width, height,
+        margin-top, margin-bottom, and float properties
+        have no effect.css(propertyIgnoredDueToDisplay)' -
+        it is not ignored in Firefox Quantum 65.0 (64-bit)
+        for Fedora. And without that, the 'display: inline'
+        has no effect in that browser. */
+        width: initial;
+    }
+
+    main {
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+
+    .cat-description-content,
+    .cat-content {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        /* The following "width" property is set, because
+        it seems that, for being displayed of equal sizes,
+        at least one "table cell" must have defined width. */
+        width: 50%;
+    }
+}

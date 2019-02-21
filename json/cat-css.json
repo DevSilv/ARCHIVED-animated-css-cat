@@ -1,0 +1,161 @@
+{
+    "tag": "div",
+    "className": "cat",
+    "childElements": [{
+            "tag": "div",
+            "className": "cat-shadow",
+            "childElements": []
+        },
+        {
+            "tag": "div",
+            "className": "cat-head",
+            "childElements": [{
+                    "tag": "div",
+                    "className": "cat-ears",
+                    "childElements": [{
+                            "tag": "div",
+                            "className": "cat-ear cat-ear-left",
+                            "childElements": []
+                        },
+                        {
+                            "tag": "div",
+                            "className": "cat-ear cat-ear-right",
+                            "childElements": []
+                        }
+                    ]
+                },
+                {
+                    "tag": "div",
+                    "className": "cat-eyes",
+                    "childElements": [{
+                            "tag": "div",
+                            "className": "cat-eye cat-eye-left",
+                            "childElements": [{
+                                "tag": "div",
+                                "className": "cat-pupil",
+                                "childElements": []
+                            }]
+                        },
+                        {
+                            "tag": "div",
+                            "className": "cat-eye cat-eye-right",
+                            "childElements": [{
+                                "tag": "div",
+                                "className": "cat-pupil",
+                                "childElements": []
+                            }]
+                        }
+                    ]
+                },
+                {
+                    "tag": "div",
+                    "className": "cat-nose",
+                    "childElements": []
+                },
+                {
+                    "tag": "div",
+                    "className": "cat-mouths",
+                    "childElements": [{
+                            "tag": "div",
+                            "className": "cat-mouth cat-mouth-left",
+                            "childElements": []
+                        },
+                        {
+                            "tag": "div",
+                            "className": "cat-mouth cat-mouth-right",
+                            "childElements": []
+                        },
+                        {
+                            "tag": "div",
+                            "className": "cat-tongue",
+                            "childElements": []
+                        }
+                    ]
+                }
+
+            ]
+        },
+        {
+            "tag": "div",
+            "className": "cat-legs",
+            "childElements": [{
+                    "tag": "div",
+                    "className": "cat-leg cat-leg-left",
+                    "childElements": [{
+                            "tag": "div",
+                            "className": "cat-leg-part cat-leg-left-top",
+                            "childElements": []
+                        },
+                        {
+                            "tag": "div",
+                            "className": "cat-leg-part cat-leg-left-bottom",
+                            "childElements": [{
+                                "tag": "div",
+                                "className": "cat-paw-left",
+                                "childElements": []
+                            }]
+                        }
+                    ]
+                },
+                {
+                    "tag": "div",
+                    "className": "cat-leg cat-leg-right",
+                    "childElements": [{
+                            "tag": "div",
+                            "className": "cat-leg-part cat-leg-right-top",
+                            "childElements": []
+                        },
+                        {
+                            "tag": "div",
+                            "className": "cat-leg-part cat-leg-right-bottom",
+                            "childElements": [{
+                                "tag": "div",
+                                "className": "cat-paw-right",
+                                "childElements": []
+                            }]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "tag": "div",
+            "className": "cat-tail",
+            "childElements": [{
+                    "tag": "div",
+                    "className": "cat-tail-part",
+                    "childElements": []
+                },
+                {
+                    "tag": "div",
+                    "className": "cat-tail-part-moving-container",
+                    "childElements": [{
+                        "tag": "div",
+                        "className": "cat-tail-part-moving",
+                        "childElements": [{
+                            "tag": "div",
+                            "className": "cat-tail-part-moving",
+                            "childElements": [{
+                                "tag": "div",
+                                "className": "cat-tail-part-moving",
+                                "childElements": [{
+                                    "tag": "div",
+                                    "className": "cat-tail-part-moving",
+                                    "childElements": [{
+                                        "tag": "div",
+                                        "className": "cat-tail-part-moving",
+                                        "childElements": [{
+                                            "tag": "div",
+                                            "className": "cat-tail-part-moving cat-tail-part-moving-last",
+                                            "childElements": []
+                                        }]
+                                    }]
+                                }]
+                            }]
+                        }]
+                    }]
+                }
+            ]
+        }
+    ]
+}

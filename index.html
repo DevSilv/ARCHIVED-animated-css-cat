@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+  <title>Simple animated CSS cat</title>
+  <meta charset="UTF-8">
+  <!-- The following code is currently off, maybe for future improvements.
+  However, switching it on fix a problem (?) with the Firefox's 65.0 touch
+  simulation mechanism, which crushes layout of the page. I do not know, why it is,
+  so the code is disabled for now. -->
+  <!-- (?) <meta name="viewport" content="width=device-width, initial-scale=1.0"> (?) -->
+  <link rel="stylesheet" type="text/css" href="./css/index.css" />
+  <!-- Architecture thought:
+    the following including all the required files with JavaScript code
+    may be substituted e.g. with modules (from ECMAScript 6),
+    but I did not choose it, because that would probably take more time
+    than is appropriate in case of this website. -->
+  <script src="./js/index.js"></script>
+  <script src="./js/get-cat.js"></script>
+  <script src="./js/change-to-content.js"></script>
+  <script src="./js/navigation-element-click.js"></script>
+  <script src="./js/get-cat.js"></script>
+  <script src="./js/main-menu.js"></script>
+</head>
+
+<body>
+  <header class="main-header">
+    <section class="main-title">
+      <span>Simple animated CSS cat</span>
+    </section>
+    <nav class="main-menu">
+      <button class="navigation-element active" id="home-content">Home
+        & about</button>
+      <button class="navigation-element" id="plain-css-cat-content">Plain
+        CSS cat</button>
+      <button class="navigation-element" id="scss-cat-content">Sass
+        (SCSS) cat</button>
+      <button class="navigation-element" id="less-cat-content">LESS
+        cat</button>
+    </nav>
+  </header>
+  <main class="main-content" style="opacity: 1;">
+    <section class="home-content">
+      <h1>About the website and the author</h1>
+      <p>This website is intended to present an animated cat.</p>
+      <p>To see the cat, click any of the links in the main menu with the word
+        "cat".</p>
+      <p>I (me, silvuss) am the author of this website. This website is
+        published by courtesy of the <a href="https://pages.github.com/">GitHub
+          Pages</a> hosting. You can find sources of this website <a href="TODO">in
+          its repository on my GitHub account</a>.</p>
+      <h1>About the cat</h1>
+      <p>
+        The cat is animated only using the <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS
+          language</a> in 3 ways:
+        <ul>
+          <li>using only CSS;</li>
+          <li>using the <a href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)">Sass
+              language</a> (with the SCSS syntax), compiled then to CSS;</li>
+          <li>using the <a href="https://en.wikipedia.org/wiki/Less_(stylesheet_language)">LESS
+              language</a>, compiled then to CSS.</li>
+        </ul>
+      </p>
+      <p>The Sass and LESS versions differ in <a href="https://en.wikipedia.org/wiki/Syntactic_sugar">syntactic
+          sugar</a>. You can find the broader descriptions which features of
+        these languages are used in the <a href="TODO">README</a>.</p>
+      <p>There are two animations that the cat is expected to show: <strong>moving
+          its tail</strong> and <strong>cleaning its paws</strong>. The tail
+        shall move every 5 seconds, and both the paws shall be cleaned every 20
+        seconds.</p>
+      <p>I am not an expert on cats. When I was creating the tail animation,
+        unfortunately, I forgot to look for any information of the behavior of
+        cats. Therefore, the moves that the cat is making with its tail are not
+        to be strictly classified; I think that they may seem to indicate
+        something like playful mood (according to <a href="https://en.wikipedia.org/wiki/Cat_communication#Tail">this
+          Wikipedia's article on cat</a>).
+    </section>
+    <section class="cat-container"></section>
+  </main>
+  <footer class="main-footer">
+    <span>Copyright &copy; <time>2018</time> silvuss</span> | <span>This
+      website has <strong>no license</strong>. For more information, see <a
+        href="https://choosealicense.com/no-permission/">this GitHub's guide</a>.</span>
+  </footer>
+</body>
+
+</html>

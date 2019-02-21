@@ -1,0 +1,465 @@
+@cat-color: gray;
+@cat-head-color: lightgray;
+@cat-ear-color: @cat-color;
+@cat-eye-color: yellow;
+@cat-pupil-color: black;
+@cat-nose-color: salmon;
+@cat-tongue-color: salmon;
+@cat-leg-color: #595959;
+@cat-paw-color: #595959;
+@cat-tail-color: #595959;
+
+@cat-radius: 50px;
+@cat-width: @cat-radius * 2;
+@cat-height: @cat-radius * 2;
+@cat-head-width: @cat-width / 2 + @cat-width / 4;
+@cat-head-height: @cat-width / 2 - @cat-width / 2 * .2;
+@cat-eye-height: 6px;
+@cat-eye-width: 12px;
+@cat-ear-height: 10px;
+@cat-ear-width: 12px;
+@cat-pupil-width: 5px;
+@cat-pupil-height: @cat-eye-height;
+@cat-nose-width: 10px;
+@cat-nose-height: 10px;
+@cat-mouth-width: 10px;
+@cat-mouth-height: 10px;
+@cat-tongue-width: 6px;
+@cat-tongue-height: 8px;
+@cat-mouth-thickness: 1px;
+@cat-leg-width: 14px;
+@cat-paw-width: 14px;
+@cat-legs-distance: 6px;
+@cat-front-thigh-height: 21px;
+@cat-back-thigh-height: 39px;
+@cat-tail-thickness: 7px;
+
+@paw-cleaning-animation-duration: 20s;
+
+@import '../css/animations-for-less.css';
+
+.cat {
+    width: @cat-width;
+    height: @cat-height;
+    margin-top: @cat-height * .5;
+    margin-right: auto;
+    margin-bottom: @cat-height * .5;
+    margin-left: auto;
+
+    border-radius: @cat-radius;
+    background-color: @cat-color;
+
+    .cat-shadow {
+        position: absolute;
+        // The value of the following cat's shadow z-index property might be
+        //  set to "-1", but it must be set to "-2" because of the z-index
+        //  property value of the cat's tail (that is already set to "-1").
+        z-index: -2;
+
+        width: @cat-height;
+        height: @cat-width;
+        // Although the following transform property value has fixed values
+        //  inside it (so it is not as much scalable as desirable in the case of
+        //  language with variables, such as LESS), it works.
+        transform: rotateX(-70deg) rotateY(10deg) translateZ(40px) translateX(30px);
+
+        border-radius: 50%;
+        // The following background-image property has to have set
+        //  the second color value as the same value as the background-color
+        //  property of the whole cat (in order to look like the cat's shadow).
+        background-image: radial-gradient(rgba(0, 0, 0, .2) 50%, lightgoldenrodyellow 70%);
+    }
+
+    .cat-head {
+        position: relative;
+        top: -(@cat-width / 2) * .2;
+
+        width: @cat-head-width;
+        height: @cat-head-height;
+        margin-right: auto;
+        margin-left: auto;
+
+        animation-name: cat-head-moving;
+        animation-duration: @paw-cleaning-animation-duration;
+        animation-iteration-count: infinite;
+
+        border-radius: @cat-head-height @cat-head-height @cat-head-height / 2 @cat-head-height / 2;
+        background-color: @cat-head-color;
+
+        .cat-ears {
+            position: relative;
+
+            width: @cat-head-width / 2.5;
+            margin-right: auto;
+            margin-left: auto;
+
+            .cat-ear {
+                position: absolute;
+                top: -@cat-ear-height;
+
+                width: 0;
+                height: 0;
+
+                border-style: solid;
+                border-color: transparent;
+                border-top-width: 0;
+                border-right-width: @cat-ear-width / 2;
+                border-bottom: @cat-ear-height solid @cat-ear-color;
+                border-left-width: @cat-ear-width / 2;
+            }
+
+            // The following code is currently off,
+            //  maybe for future improvements.
+            // .cat-ear-left {
+            //   transform: rotateZ(-5deg);
+            //   animation-name: cat-left-ear-perking;
+            //   animation-duration: 8s;
+            //   animation-iteration-count: infinite;
+            //   left: 5px;
+            //   top: -1px;
+            // }
+
+            // The following code is currently off,
+            //  maybe for future improvements.
+            // @keyframes cat-left-ear-perking {
+            //   0%,
+            //   85%,
+            //   95%,
+            //   100% {
+            //     transform: rotate(-25deg);
+            //     transform-origin: center bottom;
+            //   }
+            //   87.5%,
+            //   97.5% {
+            //     transform: rotate(-35deg);
+            //     transform-origin: center bottom;
+            //   }
+            // }
+
+            .cat-ear-right {
+                left: @cat-head-width / 2.5 - @cat-ear-width;
+            }
+        }
+
+        .cat-eyes {
+            position: relative;
+            top: 10px;
+
+            width: @cat-head-width / 1.75;
+            margin-right: auto;
+            margin-left: auto;
+
+            .cat-eye {
+                width: @cat-eye-width;
+                height: @cat-eye-height;
+
+                animation-name: cat-eye-squinting;
+                animation-duration: @paw-cleaning-animation-duration;
+                animation-iteration-count: infinite;
+
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 5px;
+                border-bottom-left-radius: 5px;
+                background-color: @cat-eye-color;
+            }
+
+            .cat-eye-left,
+            .cat-eye-right {
+                position: absolute;
+            }
+
+            .cat-eye-right {
+                left: @cat-head-width / 1.75 - @cat-eye-width;
+            }
+
+            .cat-pupil {
+                position: absolute;
+                right: 0;
+                left: 0;
+
+                width: @cat-pupil-width;
+                height: @cat-pupil-height;
+                margin-right: auto;
+                margin-left: auto;
+
+                border-bottom-right-radius: 50%;
+                border-bottom-left-radius: 50%;
+                background-color: @cat-pupil-color;
+            }
+        }
+
+        // The following ".cat-nose" rule might probably
+        //  be recognized as built in an incorrect way -
+        //  such that it causes nonsymetric placement
+        //  of the cat's nose along the X-axis (it should
+        //  be shifted one pixel to the left or so). But
+        //  I decided to leave it as is, as long as it works
+        //  and the cat does not demand more symmetry
+        //  than this rule already provides.
+        .cat-nose {
+            position: relative;
+            top: 10px;
+
+            overflow: hidden;
+
+            width: @cat-nose-width;
+            height: @cat-nose-height;
+            margin-right: auto;
+            margin-left: auto;
+
+            transform: rotate(180deg);
+
+            border: 5px solid transparent;
+            border-radius: 50%;
+            background-color: transparent;
+
+            &:before {
+                position: absolute;
+                top: -1px;
+                left: -3px;
+
+                content: '';
+
+                border: solid 8px transparent;
+                border-top-width: 0;
+                border-bottom-color: @cat-nose-color;
+                background-color: transparent;
+            }
+        }
+
+        // The following code is currently off,
+        //  maybe for future improvements.
+        // .cat-whiskers {
+        //   position: relative;
+        //   top: 0;
+        //   left: 12px;
+        //   .cat-whisker {
+        //     position: absolute;
+        //     width: 20px;
+        //     border-top: 1px solid $cat-color;
+        //     height: 0;
+        //   }
+        //   .cat-whisker-top-left {
+        //     transform: rotate(15deg);
+        //   }
+        //   .cat-whisker-bottom-left {
+        //     top: 6px;
+        //     transform: rotate(-15deg);
+        //   }
+        //   .cat-whisker-top-right {
+        //     left: 31px;
+        //     transform: rotate(-15deg);
+        //   }
+        //   .cat-whisker-bottom-right {
+        //     top: 6px;
+        //     left: 31px;
+        //     transform: rotate(15deg);
+        //   }
+        // }
+
+        .cat-mouths {
+            position: relative;
+            // The value of the following "top" property must be
+            //  set to "-1" because the way that the cat's nose
+            //  is built causes the nose to have "cut" one bottom
+            //  pixel (or so). If it were not set to "-1", the cat's
+            //  mouth would be placed to far from the nose.
+            top: -1px;
+
+            background-color: purple;
+
+            .cat-mouth {
+                position: absolute;
+                right: 0;
+                left: 0;
+
+                width: @cat-mouth-width;
+                height: @cat-mouth-height;
+                margin-right: auto;
+                margin-left: auto;
+
+                transform: rotate(45deg);
+
+                border: @cat-mouth-thickness solid gray;
+                // The following "top-color" and "left-color" properties
+                //  must be defined with its "transparent" values. There
+                //  cannot be defined "top: none" and "left: none"
+                //  properties, because if they were defined, then there
+                //  would appear odd effects (possibly because of
+                //  the percentage value of the "radius" property).
+                border-top-color: transparent;
+                border-left-color: transparent;
+                border-radius: 50%;
+                background-color: transparent;
+            }
+
+            .cat-mouth-left {
+                left: -@cat-mouth-width - @cat-mouth-thickness;
+            }
+
+            .cat-mouth-right {
+                // The following "left" property has one pixel
+                //  added to its value because of (most probably)
+                //  incorrectly built cat's nose rule (see).
+                left: @cat-mouth-width + @cat-mouth-thickness + 1px;
+            }
+
+            .cat-tongue {
+                position: absolute;
+                z-index: 1;
+                top: @cat-mouth-height + 2 * @cat-mouth-thickness;
+                right: 0;
+                left: 0;
+
+                width: @cat-tongue-width;
+                height: @cat-tongue-height;
+                margin-right: auto;
+                margin-left: auto;
+
+                animation-name: cat-tongue;
+                animation-duration: @paw-cleaning-animation-duration;
+                animation-iteration-count: infinite;
+
+                border-bottom-right-radius: 50%;
+                border-bottom-left-radius: 50%;
+                background-color: @cat-tongue-color;
+            }
+        }
+    }
+
+    .cat-legs {
+        position: relative;
+
+        width: 0;
+        margin-right: auto;
+        margin-left: auto;
+
+        .cat-leg {
+            .cat-leg-part {
+                width: @cat-leg-width;
+
+                background-color: @cat-leg-color;
+
+                .cat-paw-left,
+                .cat-paw-right {
+                    position: relative;
+                    top: 34px;
+
+                    width: @cat-paw-width;
+                    height: 5px;
+
+                    border-top-left-radius: 50%;
+                    border-top-right-radius: 50%;
+                    background-color: @cat-paw-color;
+                }
+            }
+        }
+
+        .cat-leg-left-top,
+        .cat-leg-right-top {
+            height: @cat-front-thigh-height;
+        }
+
+        .cat-leg-left-bottom,
+        .cat-leg-right-bottom {
+            height: @cat-back-thigh-height;
+
+            border-bottom-right-radius: 40%;
+            border-bottom-left-radius: 40%;
+        }
+
+        .cat-leg-left,
+        .cat-leg-right {
+            position: absolute;
+        }
+
+        .cat-leg-left {
+            left: -@cat-leg-width - @cat-legs-distance / 2;
+
+            transform: rotateZ(-3deg);
+            transform-origin: top center;
+
+            .cat-leg-left-top {
+                border-top-left-radius: 80%;
+                border-top-right-radius: 20%;
+            }
+
+            .cat-leg-left-bottom {
+                animation-name: cat-leg-left-moving;
+                animation-duration: @paw-cleaning-animation-duration;
+                animation-iteration-count: infinite;
+            }
+
+            .cat-paw-left {
+                transform: rotateZ(3deg);
+                animation-name: cat-paw-left-unclench;
+                animation-duration: @paw-cleaning-animation-duration;
+                animation-iteration-count: infinite;
+            }
+        }
+    }
+
+    .cat-leg-right {
+        left: @cat-legs-distance / 2;
+
+        transform: rotateZ(3deg);
+        transform-origin: top center;
+
+        .cat-leg-right-top {
+            border-top-left-radius: 20%;
+            border-top-right-radius: 80%;
+        }
+
+        .cat-leg-right-bottom {
+            animation-name: cat-leg-right-moving;
+            animation-duration: @paw-cleaning-animation-duration;
+            animation-iteration-count: infinite;
+
+            .cat-paw-right {
+                transform: rotateZ(-3deg);
+                animation-name: cat-paw-right-unclench;
+                animation-duration: @paw-cleaning-animation-duration;
+                animation-iteration-count: infinite;
+            }
+        }
+    }
+}
+
+.cat-tail {
+    position: relative;
+    z-index: -1;
+    top: @cat-height - @cat-head-height - @cat-tail-thickness;
+    left: @cat-width / 2;
+
+    .cat-tail-part {
+        position: absolute;
+
+        width: 50px;
+        height: @cat-tail-thickness;
+
+        background-color: @cat-tail-color;
+    }
+
+    .cat-tail-part-moving-container {
+        position: absolute;
+        left: calc(50px - 15px);
+
+        .cat-tail-part-moving {
+            position: relative;
+            left: 15px;
+
+            width: 15px;
+            height: 7px;
+
+            animation: cat-tail-moving 5s infinite;
+
+            background-color: @cat-leg-color;
+        }
+
+        .cat-tail-part-moving-last {
+            border-top-right-radius: 30%;
+            border-bottom-right-radius: 80%;
+        }
+    }
+}

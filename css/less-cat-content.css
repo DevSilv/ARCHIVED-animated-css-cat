@@ -1,0 +1,260 @@
+@import '../css/animations-for-less.css';
+.cat {
+  width: 100px;
+  height: 100px;
+  margin-top: 50px;
+  margin-right: auto;
+  margin-bottom: 50px;
+  margin-left: auto;
+  border-radius: 50px;
+  background-color: gray;
+}
+.cat .cat-shadow {
+  position: absolute;
+  z-index: -2;
+  width: 100px;
+  height: 100px;
+  transform: rotateX(-70deg) rotateY(10deg) translateZ(40px) translateX(30px);
+  border-radius: 50%;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.2) 50%, lightgoldenrodyellow 70%);
+}
+.cat .cat-head {
+  position: relative;
+  top: -10px;
+  width: 75px;
+  height: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  animation-name: cat-head-moving;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  border-radius: 40px 40px 20px 20px;
+  background-color: lightgray;
+}
+.cat .cat-head .cat-ears {
+  position: relative;
+  width: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.cat .cat-head .cat-ears .cat-ear {
+  position: absolute;
+  top: -10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+  border-top-width: 0;
+  border-right-width: 6px;
+  border-bottom: 10px solid gray;
+  border-left-width: 6px;
+}
+.cat .cat-head .cat-ears .cat-ear-right {
+  left: 18px;
+}
+.cat .cat-head .cat-eyes {
+  position: relative;
+  top: 10px;
+  width: 42.85714286px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.cat .cat-head .cat-eyes .cat-eye {
+  width: 12px;
+  height: 6px;
+  animation-name: cat-eye-squinting;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: yellow;
+}
+.cat .cat-head .cat-eyes .cat-eye-left,
+.cat .cat-head .cat-eyes .cat-eye-right {
+  position: absolute;
+}
+.cat .cat-head .cat-eyes .cat-eye-right {
+  left: 30.85714286px;
+}
+.cat .cat-head .cat-eyes .cat-pupil {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 5px;
+  height: 6px;
+  margin-right: auto;
+  margin-left: auto;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  background-color: black;
+}
+.cat .cat-head .cat-nose {
+  position: relative;
+  top: 10px;
+  overflow: hidden;
+  width: 10px;
+  height: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  transform: rotate(180deg);
+  border: 5px solid transparent;
+  border-radius: 50%;
+  background-color: transparent;
+}
+.cat .cat-head .cat-nose:before {
+  position: absolute;
+  top: -1px;
+  left: -3px;
+  content: '';
+  border: solid 8px transparent;
+  border-top-width: 0;
+  border-bottom-color: salmon;
+  background-color: transparent;
+}
+.cat .cat-head .cat-mouths {
+  position: relative;
+  top: -1px;
+  background-color: purple;
+}
+.cat .cat-head .cat-mouths .cat-mouth {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  transform: rotate(45deg);
+  border: 1px solid gray;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-radius: 50%;
+  background-color: transparent;
+}
+.cat .cat-head .cat-mouths .cat-mouth-left {
+  left: -11px;
+}
+.cat .cat-head .cat-mouths .cat-mouth-right {
+  left: 12px;
+}
+.cat .cat-head .cat-mouths .cat-tongue {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  right: 0;
+  left: 0;
+  width: 6px;
+  height: 8px;
+  margin-right: auto;
+  margin-left: auto;
+  animation-name: cat-tongue;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  background-color: salmon;
+}
+.cat .cat-legs {
+  position: relative;
+  width: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+.cat .cat-legs .cat-leg .cat-leg-part {
+  width: 14px;
+  background-color: #595959;
+}
+.cat .cat-legs .cat-leg .cat-leg-part .cat-paw-left,
+.cat .cat-legs .cat-leg .cat-leg-part .cat-paw-right {
+  position: relative;
+  top: 34px;
+  width: 14px;
+  height: 5px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  background-color: #595959;
+}
+.cat .cat-legs .cat-leg-left-top,
+.cat .cat-legs .cat-leg-right-top {
+  height: 21px;
+}
+.cat .cat-legs .cat-leg-left-bottom,
+.cat .cat-legs .cat-leg-right-bottom {
+  height: 39px;
+  border-bottom-right-radius: 40%;
+  border-bottom-left-radius: 40%;
+}
+.cat .cat-legs .cat-leg-left,
+.cat .cat-legs .cat-leg-right {
+  position: absolute;
+}
+.cat .cat-legs .cat-leg-left {
+  left: -17px;
+  transform: rotateZ(-3deg);
+  transform-origin: top center;
+}
+.cat .cat-legs .cat-leg-left .cat-leg-left-top {
+  border-top-left-radius: 80%;
+  border-top-right-radius: 20%;
+}
+.cat .cat-legs .cat-leg-left .cat-leg-left-bottom {
+  animation-name: cat-leg-left-moving;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+.cat .cat-legs .cat-leg-left .cat-paw-left {
+  transform: rotateZ(3deg);
+  animation-name: cat-paw-left-unclench;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+.cat .cat-leg-right {
+  left: 3px;
+  transform: rotateZ(3deg);
+  transform-origin: top center;
+}
+.cat .cat-leg-right .cat-leg-right-top {
+  border-top-left-radius: 20%;
+  border-top-right-radius: 80%;
+}
+.cat .cat-leg-right .cat-leg-right-bottom {
+  animation-name: cat-leg-right-moving;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+.cat .cat-leg-right .cat-leg-right-bottom .cat-paw-right {
+  transform: rotateZ(-3deg);
+  animation-name: cat-paw-right-unclench;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+.cat-tail {
+  position: relative;
+  z-index: -1;
+  top: 53px;
+  left: 50px;
+}
+.cat-tail .cat-tail-part {
+  position: absolute;
+  width: 50px;
+  height: 7px;
+  background-color: #595959;
+}
+.cat-tail .cat-tail-part-moving-container {
+  position: absolute;
+  left: calc(50px - 15px);
+}
+.cat-tail .cat-tail-part-moving-container .cat-tail-part-moving {
+  position: relative;
+  left: 15px;
+  width: 15px;
+  height: 7px;
+  animation: cat-tail-moving 5s infinite;
+  background-color: #595959;
+}
+.cat-tail .cat-tail-part-moving-container .cat-tail-part-moving-last {
+  border-top-right-radius: 30%;
+  border-bottom-right-radius: 80%;
+}
