@@ -1,20 +1,21 @@
 # silvuss-example-animated-CSS-cat-website
 
-This repository contains a website intended to present an animated CSS cat.
+This repository contains an example website presenting an animated CSS cat.
 
 ## Table of contents
 
 1. [Copyright note](#copyright-note)
-2. [Installation and usage](#installation-and-usage)
-3. [Technologies, tools and principles used](#technologies-tools-and-principles-used)
+2. [Disclaimers](#disclaimers)
+3. [How to install this website?](#how-to-install-this-website)
+4. [Environment, tools and technologies used](#environment-tools-and-technologies-used)
     1. [Overview](#overview)
     2. [A note about used HTML and CSS techniques and principles](#a-note-about-used-HTML-and-css-techniques-and-principles)
     3. [A note about used JavaScript techniques and principles](#a-note-about-used-javascript-techniques-and-principles)
     4. [A note about Sass features](#a-note-about-sass-features)
     5. [A note about LESS features](#a-note-about-less-features) 
     6. [Notes about other techniques and solutions](#notes-about-other-techniques-and-solutions)
-4. [Helpful sources](#helpful-sources)
-5. [Remarks](#remarks)
+5. [Sources](#sources)
+6. [Remarks](#remarks)
     1. [1](#1)
 
 ## Copyright note
@@ -26,11 +27,11 @@ For your convenience, I am including below a quote from that site:
 
 Also note that I can add a lincese in the future if it would be relevant to the needs of this project.
 
-## Installation and usage
+## How to install this website?
 
 This website does not require any installation. You can use it (view it) simply by opening the following URL in your browser: [TODO]
 
-## Technologies, tools and principles used
+## Environment, tools and technologies used
 
 ### Overview
 
@@ -51,7 +52,7 @@ This website does not require any installation. You can use it (view it) simply 
 
 \* _At least as of 2019 Feb 14, there seems to be a problem with the npm's clone package required by the "local" LESS compiler to work properly. That caused that I was having an option to choose either a CDN's LESS script (see the [LESS website](http://lesscss.org/)), or to compile LESS code using an online service. I have chosen the latter._
 
-\** _To fulfil the presumptions of the website architecture that I wanted to implement, I had three choices: (1) plain XMLHttpRequest API (in JavaScript), (2) "external" framework or library (like jQuery), (3) HTML Imports. I have decided to use the first solution. This is for two reasons: because the [HTML Imports](https://developer.mozilla.org/en-US/docs/Web/Web_Components/HTML_Imports) are either not yet implemented or obsolete in the web browsers world; and because I think that the use of "external" software would be over-complicating or over-simplifying in this case._
+\*\* _To fulfil the presumptions of the website architecture that I wanted to implement, I had three choices: (1) plain XMLHttpRequest API (in JavaScript), (2) "external" framework or library (like jQuery), (3) HTML Imports. I have decided to use the first solution. This is for two reasons: because the [HTML Imports](https://developer.mozilla.org/en-US/docs/Web/Web_Components/HTML_Imports) are either not yet implemented or obsolete in the web browsers world; and because I think that the use of "external" software would be over-complicating or over-simplifying in this case._
 
 ### A note about used HTML and CSS techniques and principles
 
@@ -147,16 +148,16 @@ This website **does not use** the following LESS features:
 
 Any notes and comments on why code is written the way it is (or works the way it works) are in the comments in the source code.
 
-## Helpful sources
+## Sources
 
 The following sources was helpful for me when creating this website (sorted alphabetically according to the subtitles). Some of them reminded me what I already knew, and from the other I learned new things.
 
-### Envato Tuts+ pages
+### Envato Tuts+ website
 
 - https://webdesign.tutsplus.com/articles/pure-css-animation-inspiration-on-codepen--cms-30875
 - https://webdesign.tutsplus.com/tutorials/css3-animations-the-hiccups-and-bugs-youll-want-to-avoid--webdesign-4867
 
-### CSS-Tricks pages
+### CSS-Tricks website
 
 - https://css-tricks.com/snippets/css/keyframe-animation-syntax/
 - https://css-tricks.com/almanac/properties/t/transform-origin/
@@ -176,7 +177,7 @@ The following sources was helpful for me when creating this website (sorted alph
 - https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
 - https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
 
-### Stack Overflow questions and answers
+### Stack Overflow website
 
 - https://stackoverflow.com/questions/37829448/hash-in-front-of-a-sass-argument
 - https://stackoverflow.com/questions/18060132/what-is-ul-means-in-sass
@@ -215,7 +216,7 @@ The following sources was helpful for me when creating this website (sorted alph
 - https://www.w3schools.com/jsref/jsref_filter.asp
 - https://www.w3schools.com/js/js_strict.asp
 
-### Various articles and websites
+### Other
 
 - https://codepen.io/agoodwin/pen/ypeWYE
 - https://www.kirupa.com/html5/animating_multiple_elements_animate_method.htm
@@ -225,11 +226,11 @@ The following sources was helpful for me when creating this website (sorted alph
 - https://www.telerik.com/blogs/how-do-i-pause-execution-in-javascript
 - https://gist.github.com/joyrexus/7307312
 
-## Remarks
+## Notes
 
-### 1
+### Outputting parameters
 
-_Hint:_ If you are using an arrow function with only one expression (say, `Array.prototype.filter()`) and want to output e.g. its parameters to the console, the short way would be to append to its body the negated `console.log()` call. It would work, since functions not explicitly returning value return the `undefined` value, which is converted to `false`; the negated `false` value becomes the `true` value; lastly, the `true` value appended with the logical `AND` operator does nothing.
+The following is a hint to outputting parameters. If you are using an arrow function with only one expression (say, `Array.prototype.filter()`) and want to output e.g. its parameters to the console, the short way would be to append to its body the negated `console.log()` call. It would work, since functions not explicitly returning value return the `undefined` value, which is converted to `false`; the negated `false` value becomes the `true` value; lastly, the `true` value appended with the logical `AND` operator does nothing.
 
 Example: `const item = ["a", "b", "c"].filter(elem => elem === "b" && !console.log(elem))` (note the exclamation mark before `console`).
 
