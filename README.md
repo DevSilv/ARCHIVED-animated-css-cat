@@ -15,8 +15,8 @@ This repository contains a simple example website presenting an animated CSS cat
     5. [A note about LESS features](#a-note-about-less-features) 
     6. [Notes about other techniques and solutions](#notes-about-other-techniques-and-solutions)
 5. [Sources](#sources)
-6. [Remarks](#remarks)
-    1. [1](#1)
+6. [Notes](#notes)
+    1. [Outputting parameters](#outputting-parameters)
 
 ## Copyright note
 
@@ -26,6 +26,12 @@ For your convenience, I am including below a quote from that site:
 > When you make a creative work (which includes code), the work is under exclusive copyright by default. Unless you include a license that specifies otherwise, nobody else can use, copy, distribute, or modify your work without being at risk of take-downs, shake-downs, or litigation. Once the work has other contributors (each a copyright holder), “nobody” starts including you.
 
 Also note that I can add a lincese in the future if it would be relevant to the needs of this project.
+
+## Disclaimers
+
+**This website is an example website that is not intended to be used.** Its purpose is only to show code that is known to work. While probably nothing dangerous would happen, you may run it only under your own responsibility.
+
+Although I have made efforts to make it work as intended and described, it is not a "proffessional" website. Specifically, it was not tested in terms of separate unit tests or similar. It was tested to build and work on only one platform. For details on the platform, see the section "[Environment, tools and technologies used](#environment-tools-and-technologies-used)" of this README.
 
 ## How to install this website?
 
