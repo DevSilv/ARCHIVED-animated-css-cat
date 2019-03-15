@@ -35,7 +35,7 @@ Although I have made efforts to make it work as intended and described, it is no
 
 ## How to install this website?
 
-This website does not require any installation. You can use it (view it) simply by opening the following URL in your browser: [TODO]
+This website does not require any installation. You can view it simply by opening the following URL in your browser: https://silvuss.github.io/silvuss-animated-css-cat/
 
 ## Environment, tools and technologies used
 
