@@ -1,6 +1,6 @@
 # silvuss-example-animated-CSS-cat-website
 
-This repository contains an example website presenting an animated CSS cat.
+This repository contains a simple example website presenting an animated CSS cat.
 
 ## Table of contents
 
