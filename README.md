@@ -48,7 +48,7 @@ This website does not require any installation. You can use it (view it) simply 
     - [Sass](https://en.wikipedia.org/wiki/Sass_(stylesheet_language)) – compiled using Ruby Sass in version 3.5.6
     - [LESS](https://en.wikipedia.org/wiki/Less_(stylesheet_language)) – compiled using the online service http://lesscss.org/less-preview/ \*
 - Programming languages and libraries:
-    - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) – [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript) in version [TODO]
+    - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 - Other technologies, tools and practices:
     - XMLHttpRequest API (in JavaScript) \*\*;
     - I have decided to avoid using the `this` keyword in JavaScript because of its complex semantics.
@@ -56,9 +56,13 @@ This website does not require any installation. You can use it (view it) simply 
     - The browser in which I have tested this website is Firefox Quantum 65.0 (64-bit) for Fedora.
     - To test how the website would look like and feel in a mobile device (UI and UX), I was using Firefox's [Responsive Design Mode](https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode); the smallest size of the content area that I was testing with was 300 pixels wide and 300 pixels high.
 
-\* _At least as of 2019 Feb 14, there seems to be a problem with the npm's clone package required by the "local" LESS compiler to work properly. That caused that I was having an option to choose either a CDN's LESS script (see the [LESS website](http://lesscss.org/)), or to compile LESS code using an online service. I have chosen the latter._
+---
 
-\*\* _To fulfil the presumptions of the website architecture that I wanted to implement, I had three choices: (1) plain XMLHttpRequest API (in JavaScript), (2) "external" framework or library (like jQuery), (3) HTML Imports. I have decided to use the first solution. This is for two reasons: because the [HTML Imports](https://developer.mozilla.org/en-US/docs/Web/Web_Components/HTML_Imports) are either not yet implemented or obsolete in the web browsers world; and because I think that the use of "external" software would be over-complicating or over-simplifying in this case._
+\* At least as of 2019 Feb 14, there seems to be a problem with the npm's clone package required by the "local" LESS compiler to work properly. That caused that I was having an option to choose either a CDN's LESS script (see the [LESS website](http://lesscss.org/)), or to compile LESS code using an online service. I have chosen the latter.
+
+\*\* To fulfil the presumptions of the website architecture that I wanted to implement, I had three choices: (1) plain XMLHttpRequest API (in JavaScript), (2) "external" framework or library (like jQuery), (3) HTML Imports. I have decided to use the first solution. This is for two reasons: because the [HTML Imports](https://developer.mozilla.org/en-US/docs/Web/Web_Components/HTML_Imports) are either not yet implemented or obsolete in the web browsers world; and because I think that the use of "external" software would be over-complicating or over-simplifying in this case.
+
+---
 
 ### A note about used HTML and CSS techniques and principles
 
